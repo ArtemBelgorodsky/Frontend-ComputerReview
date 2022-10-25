@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto+Condensed:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto+Condensed:wght@300;400&family=Roboto:wght@700&display=swap');
 
 /* HEADER*/
 
@@ -63,16 +63,59 @@
 }
 
 /* HEADER END*/
-/* TABS MENU*/
+/* SITE MENU*/
+.site_menu_wrapper {
+	margin-top: 50px;
+}
 
+.site_menu {
+	display: flex;
+	justify-content: center;
+	font-family: 'Roboto';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 16px;
+	line-height: 19px;
+	position: relative;
+}
 
+.item {
+	flex-basis: 10%;
+	color: #000000;
+	text-align: center;
+	z-index: 2;
 
-/* TABS MENU END*/
+}
+
+.item:hover {
+	cursor: pointer;
+	color: #48E0B1;
+}
+
+.active {
+	color: #FFFFFF;
+}
+
+.selection {
+	position: absolute;
+	width: 10%;
+	height: 150%;
+	background-color: #BE914E;
+	border-radius: 30px;
+	left: 405px;
+	top: -5px;
+	z-index: 1;
+	transition: 0.3s;
+
+}
+
+/* SITE MENU END*/
 
 
 /* MAIN*/
 .main_layout {
 	padding: 40px 0;
+	justify-content: center;
 }
 
 /* MAIN END*/
