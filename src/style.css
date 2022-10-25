@@ -1,37 +1,51 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto+Condensed:wght@300;400&display=swap');
+
+/* HEADER*/
 
 .header {
 	background-color: #48E0B1;
 	height: 50px;
 	padding: 0 30px;
 	display: flex;
-	justify-content: flex-end;
+	justify-content: flex-start;
 	align-items: center;
 
 }
-.header_icon{
+
+.header_icon {
 	width: 40px;
 	height: 40px;
 	background-size: cover;
+	transition: 0.3s;
 }
 
 .enter {
 	background-image: url(../icons/enter.png);
 }
 
-.register{
+.enter:hover {
+	background-image: url(../icons/enter_hover.png);
+	cursor: pointer;
+}
+
+.register {
 	background-image: url(../icons/register.png);
 }
 
+.register:hover {
+	background-image: url(../icons/register_hover.png);
+	cursor: pointer;
+}
 
-.logo_wrapper{
-	position: relative;
-	top: -25px;
-	width: 100%;
+.logo_wrapper {
 	left: 30px;
+	flex-basis: 100%;
 }
 
 .logo {
+	position: relative;
+	top: 29px;
+
 	font-family: 'Bebas Neue';
 	font-style: normal;
 	font-weight: 400;
@@ -43,11 +57,98 @@
 	margin: 0;
 
 	background: linear-gradient(180deg, #FFFFFF 43%, #48E0B1 43%);
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
--webkit-text-stroke: 1px #000000
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	-webkit-text-stroke: 1px #000000
 }
 
-.main_layout{
+/* HEADER END*/
+/* TABS MENU*/
+
+
+
+/* TABS MENU END*/
+
+
+/* MAIN*/
+.main_layout {
 	padding: 40px 0;
 }
+
+/* MAIN END*/
+
+/* FOOTER */
+.footer {
+	height: 150px;
+	background-color: #48E0B1;
+	display: flex;
+	padding: 5px 30px;
+	align-items: stretch;
+	font-family: 'Roboto Condensed', sans-serif;
+}
+
+.footer h3 {
+	color: #BE914E;
+}
+
+.footer a {
+	color: #FFFFFF;
+}
+
+.footer a:hover {
+	color: #BE914E;
+}
+
+.map_site {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.map_site_text {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	font-style: normal;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 19px;
+}
+
+.rights {
+	display: flex;
+	align-items: center;
+}
+
+.rights_text {
+	width: 100%;
+	text-align: center;
+	color: #FFFFFF;
+
+	font-family: 'Bebas Neue';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 19px;
+}
+
+.questions {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.questions_text {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	font-family: 'Roboto Condensed';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 19px;
+}
+
+/* FOOTER END */
