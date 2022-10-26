@@ -1,5 +1,6 @@
 import React from "react";
 import { useState, useRef, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 export default function Menu() {
   const [active, setActive] = useState(0);
@@ -12,7 +13,7 @@ export default function Menu() {
   };
 
   const MenuList = [
-    { title: "Главная" },
+    { title: "Главная", link: "contacts/1" },
     {
       title: "Статьи",
       submenu1: "Сборки ПК",
@@ -68,7 +69,7 @@ export default function Menu() {
             >
               {Object.keys(elem).map((sub) =>
                 sub == "title" ? null : (
-                  <a className="push_menu_item">{elem[sub]}</a>
+                  <Link className="push_menu_item">{elem[sub]}</Link>
                 )
               )}
             </div>
