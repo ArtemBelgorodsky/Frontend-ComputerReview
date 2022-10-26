@@ -1,7 +1,6 @@
 import { Col, Layout } from "antd";
 import Menu from "../components/Menu";
 import React from "react";
-import { useState } from "react";
 import "antd/dist/antd.css";
 import "../style.css";
 
@@ -18,7 +17,7 @@ function Root() {
           <a className="header_icon enter"></a>
           <a className="header_icon register"></a>
         </Header>
-        <Menu list={["Главная", "Статьи", "Аналитика", "Наш магазин"]} />
+        <Menu />
         <Layout className="main_layout">
           <Sider>Sider</Sider>
           <Content>Content</Content>
