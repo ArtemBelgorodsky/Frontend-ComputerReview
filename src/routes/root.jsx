@@ -4,10 +4,13 @@ import Menu from "../components/Menu";
 import React from "react";
 import "antd/dist/antd.css";
 import "../style.css";
+import { useState } from "react";
 
 const { Header, Footer, Sider, Content } = Layout;
 
 function Root() {
+  const [load, setLoad] = useState(false);
+
   return (
     <>
       <Layout style={{ backgroundColor: "white" }}>
