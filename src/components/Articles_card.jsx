@@ -1,0 +1,34 @@
+import {
+  EditOutlined,
+  EllipsisOutlined,
+  SettingOutlined,
+} from "@ant-design/icons";
+import { Avatar, Card } from "antd";
+import React from "react";
+const { Meta } = Card;
+const Articles_card = () => (
+  <Card
+    style={{
+      width: 250,
+      margin: "10px",
+    }}
+    cover={
+      <img
+        alt="example"
+        src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
+      />
+    }
+    actions={[
+      <SettingOutlined key="setting" />,
+      <EditOutlined key="edit" />,
+      <EllipsisOutlined key="ellipsis" />,
+    ]}
+  >
+    <Meta
+      avatar={<Avatar src="https://joeschmoe.io/api/v1/random" />}
+      title="Card title"
+      description="This is the description"
+    />
+  </Card>
+);
+export default Articles_card;

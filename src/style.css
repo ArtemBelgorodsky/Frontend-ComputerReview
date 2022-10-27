@@ -65,6 +65,7 @@
 /* HEADER END*/
 /* SITE MENU*/
 .site_menu_wrapper {
+
 	margin-top: 50px;
 }
 
@@ -77,6 +78,7 @@
 	font-size: 16px;
 	line-height: 19px;
 	position: relative;
+
 }
 
 .item {
@@ -155,6 +157,16 @@
 .main_layout {
 	padding: 40px 0;
 	justify-content: center;
+	background-color: #FFFFFF;
+}
+
+.content {
+	background-color: #FFFFFF;
+}
+
+.articles_wrapper {
+	display: flex;
+	flex-wrap: wrap;
 }
 
 /* MAIN END*/

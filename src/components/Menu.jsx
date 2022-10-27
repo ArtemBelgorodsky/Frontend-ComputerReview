@@ -13,25 +13,33 @@ export default function Menu() {
   };
 
   const MenuList = [
-    { title: "Главная", link: "contacts/1" },
+    {
+      title: "Главная",
+      link: "/main",
+    },
     {
       title: "Статьи",
-      submenu1: "Сборки ПК",
-      submenu2: "Комплектующие к ПК",
-      submenu3: "Смартфоны",
+      link: "/main/articles",
+      submenu: [
+        { title: "Сборки ПК", link: "contacts/1" },
+        { title: "Комплектующие к ПК", link: "contacts/1" },
+        { title: "Смартфоны", link: "contacts/1" },
+      ],
     },
     {
       title: "Аналитика",
+      link: "/main/analytics",
     },
-    { title: "Наш магазин" },
+    { title: "Наш магазин", link: "contacts/1" },
   ];
 
   const handleOffsetLeft = useRef();
 
   const positionHandler = () => {
+    console.log("11");
     setPosition(handleOffsetLeft.current.offsetLeft);
   };
-
+  console.log(handleOffsetLeft);
   useEffect(() => {
     setPosition(handleOffsetLeft.current.offsetLeft);
     window.addEventListener("resize", positionHandler);
@@ -55,11 +63,12 @@ export default function Menu() {
     <div className="site_menu_wrapper">
       <div className="site_menu">
         {MenuList.map((elem, index) => (
-          <a
+          <Link
             className={index == active ? "active item" : "item"}
             key={index}
             ref={index == active ? handleOffsetLeft : null}
             onClick={(event) => activeItem(index, event.target.offsetLeft)}
+            to={elem.link}
           >
             {elem.title}
             <div
@@ -67,13 +76,14 @@ export default function Menu() {
                 active == index && !visible ? "push_menu_visble" : "push_menu"
               }
             >
-              {Object.keys(elem).map((sub) =>
-                sub == "title" ? null : (
-                  <Link className="push_menu_item">{elem[sub]}</Link>
-                )
-              )}
+              {elem.submenu &&
+                elem.submenu.map((sub) => (
+                  <Link to={sub.link} className="push_menu_item">
+                    {sub.title}
+                  </Link>
+                ))}
             </div>
-          </a>
+          </Link>
         ))}
         <div className="selection" style={{ left: position }}></div>
       </div>

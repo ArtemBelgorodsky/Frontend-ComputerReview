@@ -1,3 +1,4 @@
+import { Outlet } from "react-router-dom";
 import { Col, Layout } from "antd";
 import Menu from "../components/Menu";
 import React from "react";
@@ -9,7 +10,7 @@ const { Header, Footer, Sider, Content } = Layout;
 function Root() {
   return (
     <>
-      <Layout>
+      <Layout style={{ backgroundColor: "white" }}>
         <Header className="header">
           <div className="logo_wrapper">
             <h1 className="logo">computeRReview</h1>
@@ -20,7 +21,9 @@ function Root() {
         <Menu />
         <Layout className="main_layout">
           <Sider>Sider</Sider>
-          <Content>Content</Content>
+          <Content className="content">
+            <Outlet />
+          </Content>
           <Sider>Sider</Sider>
         </Layout>
         <Footer className="footer">
