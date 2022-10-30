@@ -36,10 +36,9 @@ export default function Menu() {
   const handleOffsetLeft = useRef();
 
   const positionHandler = () => {
-    console.log("11");
     setPosition(handleOffsetLeft.current.offsetLeft);
   };
-  console.log(handleOffsetLeft);
+
   useEffect(() => {
     setPosition(handleOffsetLeft.current.offsetLeft);
     window.addEventListener("resize", positionHandler);

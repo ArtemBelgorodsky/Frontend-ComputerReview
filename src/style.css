@@ -169,6 +169,24 @@
 	flex-wrap: wrap;
 }
 
+.loader {
+	display: flex;
+	background-image: url('RR.svg');
+	width: 30%;
+	height: 30%;
+	background-position: center;
+	background-repeat: no-repeat;
+	align-items: center;
+	justify-content: center;
+}
+
+.loader_wrapper {
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
 /* MAIN END*/
 
 /* FOOTER */

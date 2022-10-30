@@ -8,7 +8,7 @@ import Articles from "./pages/Articles";
 
 const router = createBrowserRouter([
   {
-    path: "/main",
+    path: "/",
     element: <Root />,
     children: [
       {
