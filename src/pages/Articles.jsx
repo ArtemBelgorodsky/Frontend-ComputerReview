@@ -3,7 +3,7 @@ import Articles_card from "../components/Articles_card";
 
 let a = new Array();
 
-for (let i = 0; i < 10; i++) {
+for (let i = 0; i < 20; i++) {
   a.push(i);
 }
 

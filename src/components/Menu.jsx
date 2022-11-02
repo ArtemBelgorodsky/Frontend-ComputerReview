@@ -15,15 +15,15 @@ export default function Menu() {
   const MenuList = [
     {
       title: "Главная",
-      link: "/main",
+      link: "/",
     },
     {
       title: "Статьи",
       link: "/main/articles",
       submenu: [
         { title: "Сборки ПК", link: "contacts/1" },
-        { title: "Комплектующие к ПК", link: "contacts/1" },
-        { title: "Смартфоны", link: "contacts/1" },
+        { title: "Комплектующие к ПК", link: "contacts/2" },
+        { title: "Смартфоны", link: "contacts/3" },
       ],
     },
     {
@@ -57,6 +57,7 @@ export default function Menu() {
       setVisible(!visible);
     }
   }
+
 
   return (
     <div className="site_menu_wrapper">
