@@ -1,0 +1,72 @@
+/* MAIN */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto+Condensed:wght@300;400&family=Roboto:wght@700&display=swap&family=Open+Sans:wght@700&display=swap');
+img{
+    width: 100%;
+    height: 100%;
+}
+
+.main_row_left {
+    max-height: 430px;
+    margin-bottom: 20px;
+}
+
+.main_layout_img {
+    width: 100%;
+    height: 100%;
+}
+
+.main_content_img {
+    position: relative;
+}
+
+.main_content_img_text {
+    position: absolute;
+    color: #FFFFFF;
+    top: 5px;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+.main_layout_text{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.main_row_review_block{
+    padding: 8px;
+    border-bottom: black 1px solid;
+    min-height: 50px;
+    max-height: 150px;
+    flex-wrap: nowrap;
+    overflow: hidden;
+}
+
+.main_row_review_col_text{
+
+
+}
+
+.main_row_review_block_title{
+    font-family: 'Open Sans';
+    color: #BE914E;
+    margin-bottom: 2px;
+}
+.main_row_review_block_text{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    height: 60%;
+    margin: 0;
+}
+
+.main_row_review_block_icons{
+    height: 20px;
+    display: flex;
+}
+
+.icon{
+    width: 20px;
+    height: 20px;
+}
+
+
+/* MAIN END*/
