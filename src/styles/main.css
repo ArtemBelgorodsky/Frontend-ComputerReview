@@ -1,44 +1,54 @@
 /* MAIN */
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto+Condensed:wght@300;400&family=Roboto:wght@700&display=swap&family=Open+Sans:wght@700&display=swap');
+
+
 img{
     width: 100%;
     height: 100%;
 }
 
 .main_row_left {
-    max-height: 430px;
     margin-bottom: 20px;
+    max-height: 350px;
 }
 
 .main_layout_img {
     width: 100%;
-    height: 100%;
+    min-height: 100%;
 }
 
 .main_content_img {
     position: relative;
+    min-height: 100%;
+    min-width: 100%;
+    display: block;
 }
 
 .main_content_img_text {
     position: absolute;
     color: #FFFFFF;
-    top: 5px;
+    top: 20px;
+    left: 20px;
     font-family: 'Roboto Condensed', sans-serif;
 }
 .main_layout_text{
     width: 100%;
-    height: 100%;
     display: flex;
     flex-direction: column;
 }
 
 .main_row_review_block{
-    padding: 8px;
+    padding: 5px;
     border-bottom: black 1px solid;
     min-height: 50px;
     max-height: 150px;
     flex-wrap: nowrap;
     overflow: hidden;
+    transition: 0.5s;
+}
+.main_row_review_block:hover{
+    background-color: rgba(72, 224, 177, 0.23);
+    cursor: pointer;
 }
 
 .main_row_review_col_text{
@@ -61,11 +71,14 @@ img{
 .main_row_review_block_icons{
     height: 20px;
     display: flex;
+
 }
 
 .icon{
     width: 20px;
     height: 20px;
+    margin-left: 5px;
+
 }
 
 
