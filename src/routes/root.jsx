@@ -1,5 +1,5 @@
 import {Outlet} from "react-router-dom";
-import {Col, Layout} from "antd";
+import {Col, Layout, Space} from "antd";
 import Menu from "../components/Menu";
 import Loader from "../components/Loader";
 import React from "react";
