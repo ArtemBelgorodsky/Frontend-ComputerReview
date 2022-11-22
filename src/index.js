@@ -5,6 +5,7 @@ import Root from "./routes/root";
 import Main from "./pages/Main";
 import Analytics from "./pages/Analytics";
 import Articles from "./pages/Articles";
+import MainLink from "./links/mainLink";
 
 const router = createBrowserRouter([
   {
@@ -16,12 +17,16 @@ const router = createBrowserRouter([
         element: <Main />,
       },
       {
-        path: "/main/analytics",
+        path: "/analytics",
         element: <Analytics />,
       },
       {
-        path: "/main/articles",
+        path: "/articles",
         element: <Articles />,
+      },
+      {
+        path: "/news/:newsId",
+        element: <MainLink />,
       },
     ],
   },

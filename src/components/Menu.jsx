@@ -1,11 +1,13 @@
 import React from "react";
 import { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 export default function Menu() {
   const [active, setActive] = useState(0);
   const [position, setPosition] = useState(0);
   const [visible, setVisible] = useState(false);
+  const [menu, setMenu] = useState({ menu: [], loaded: true });
   const activeItem = (index, pos) => {
     setActive(index);
     pos && setPosition(pos);
@@ -19,7 +21,7 @@ export default function Menu() {
     },
     {
       title: "Статьи",
-      link: "/main/articles",
+      link: "/articles",
       submenu: [
         { title: "Сборки ПК", link: "contacts/1" },
         { title: "Комплектующие к ПК", link: "contacts/2" },
@@ -28,7 +30,7 @@ export default function Menu() {
     },
     {
       title: "Аналитика",
-      link: "/main/analytics",
+      link: "/analytics",
     },
     { title: "Наш магазин", link: "contacts/1" },
   ];
@@ -40,8 +42,12 @@ export default function Menu() {
   };
 
   useEffect(() => {
-    setPosition(handleOffsetLeft.current.offsetLeft);
+    axios
+      .get(`http://localhost:3004/menu`)
+      .then((res) => setMenu({ menu: res.data, loaded: false }));
+
     window.addEventListener("resize", positionHandler);
+    setPosition(handleOffsetLeft.current.offsetLeft);
     document.addEventListener("mousedown", handleClickOutside);
     return () => {
       window.removeEventListener("resize", positionHandler);
@@ -57,8 +63,7 @@ export default function Menu() {
       setVisible(!visible);
     }
   }
-
-
+  console.log(menu);
   return (
     <div className="site_menu_wrapper">
       <div className="site_menu">
