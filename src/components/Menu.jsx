@@ -14,40 +14,22 @@ export default function Menu() {
     visible && setVisible(!visible);
   };
 
-  const MenuList = [
-    {
-      title: "Главная",
-      link: "/",
-    },
-    {
-      title: "Статьи",
-      link: "/articles",
-      submenu: [
-        { title: "Сборки ПК", link: "contacts/1" },
-        { title: "Комплектующие к ПК", link: "contacts/2" },
-        { title: "Смартфоны", link: "contacts/3" },
-      ],
-    },
-    {
-      title: "Аналитика",
-      link: "/analytics",
-    },
-    { title: "Наш магазин", link: "contacts/1" },
-  ];
-
-  const handleOffsetLeft = useRef();
-
   const positionHandler = () => {
     setPosition(handleOffsetLeft.current.offsetLeft);
   };
 
+  const handleOffsetLeft = useRef(null);
+
   useEffect(() => {
     axios
       .get(`http://localhost:3004/menu`)
-      .then((res) => setMenu({ menu: res.data, loaded: false }));
-
+      .then((res) => {
+        setMenu({ menu: res.data, loaded: false });
+      })
+      .then(() => {
+        setPosition(handleOffsetLeft.current.offsetLeft);
+      });
     window.addEventListener("resize", positionHandler);
-    setPosition(handleOffsetLeft.current.offsetLeft);
     document.addEventListener("mousedown", handleClickOutside);
     return () => {
       window.removeEventListener("resize", positionHandler);
@@ -63,11 +45,11 @@ export default function Menu() {
       setVisible(!visible);
     }
   }
-  console.log(menu);
+
   return (
     <div className="site_menu_wrapper">
       <div className="site_menu">
-        {MenuList.map((elem, index) => (
+        {menu.menu.map((elem, index) => (
           <Link
             className={index == active ? "active item" : "item"}
             key={index}
